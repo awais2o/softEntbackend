@@ -39,6 +39,7 @@ router.post('/', auth, async (req, res) => {
     const product = await newProduct.save()
     res.json(product)
   } catch (err) {
+    console.log(err)
     res.status(500).send('Server error')
   }
 })
