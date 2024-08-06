@@ -43,7 +43,7 @@ router.post('/', auth, async (req, res) => {
   }
 })
 
-router.post('/upload', auth, (req, res) => {
+router.post('/upload', (req, res) => {
   upload.single('file')(req, res, function (err) {
     if (err) {
       console.log(err)
