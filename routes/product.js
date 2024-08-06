@@ -25,11 +25,11 @@ const storage = new CloudinaryStorage({
 const upload = multer({ storage: storage })
 
 router.post('/', auth, async (req, res) => {
-  const { name, price, quantity, pictures } = req.body
+  const { name, price, quantity, pictures, user } = req.body
 
   try {
     const newProduct = new Product({
-      user: req.user.id,
+      user,
       name,
       price,
       quantity,
